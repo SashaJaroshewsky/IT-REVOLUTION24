@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 281799009}
-  - component: {fileID: 281799010}
+  - component: {fileID: 281799011}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -191,7 +191,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &281799010
+--- !u!114 &281799011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 281799008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c06163e1430f74c8246e0edf6a438f, type: 3}
+  m_Script: {fileID: 11500000, guid: f516e57607bd53f4dac8b545604affa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _roadSectionRpefab: {fileID: 4374537484382507746, guid: e3e4872cff84f694baf6e56887683c37, type: 3}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47612e7349b815d4a86f596ec09a7409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _road: {fileID: 281799010}
+  _road: {fileID: 281799011}
   _vehicleController: {fileID: 3483230051547388274}
 --- !u!1 &516501796
 GameObject:
