@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Road;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -28,18 +27,21 @@ namespace Assets.Scripts
         public event Action BarrierTriger;
         public event Action RoadSectionTriger;
 
-        [SerializeField] private Button buttonL;
-        [SerializeField] private Button buttonR;
-
-        private void Awake()
+        public void SetCarPosition(Transform transform)
         {
-            GetComponent<Rigidbody>().centerOfMass = _centerOfMass;
-            //buttonL.OnPointerDown += ButtonLeftDown;
+            this.transform.position = transform.position;
+            this.transform.rotation = transform.rotation;
+
         }
 
-        private void Update()
+        public void SetCarCurrentAcceleration()
+        { 
+            _currentAcceleration = 0;
+        }
+
+        private void OnEnable()
         {
-            
+            GetComponent<Rigidbody>().centerOfMass = _centerOfMass;
         }
 
         private void FixedUpdate()
@@ -48,9 +50,6 @@ namespace Assets.Scripts
             WheelTurn();
             _currentAcceleration += _acceleration;
         }
-
-
-       
 
         public void ButtonLeftDown()
         {
@@ -105,7 +104,7 @@ namespace Assets.Scripts
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.collider.GetComponent<Road.Barrier>())
+            if (collision.collider.GetComponent<Barrier>())
             {
                 BarrierTriger?.Invoke();
             }
@@ -118,7 +117,5 @@ namespace Assets.Scripts
                 RoadSectionTriger?.Invoke();
             }
         }
-
-
     }
 }

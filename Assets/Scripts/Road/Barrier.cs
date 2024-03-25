@@ -7,7 +7,6 @@ namespace Assets.Scripts.Road
     {
         public GameObject GameObject => gameObject;
 
-        
         public event Action<IPoolable> Destroyed;
 
         public void Reset()

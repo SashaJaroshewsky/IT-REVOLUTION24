@@ -25,7 +25,6 @@ namespace Assets.Scripts
                 var poolable = Object.Instantiate(prefab, _container);
                 _freeObjects.Add(poolable);
                 _freeObjects[i].GameObject.SetActive(false);
-               
             }
         }
 

@@ -16,7 +16,6 @@ namespace Assets.Scripts
             _activePoolTasks = new Dictionary<Component, PoolTask>();
             _container = new GameObject().transform;
             _container.name = nameof(ObjectPool);
-
         }
 
         public void CreateFreeObjects<T>(T prefab, int count) where T : Component, IPoolable

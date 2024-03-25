@@ -5,26 +5,23 @@ namespace Assets.Scripts.Road
 {
     public class RoadSection : MonoBehaviour, IPoolable
     {
-        [SerializeField] private Transform _barrierLintPosition;
+        [SerializeField] private Transform _carSpawn;
+        [SerializeField] private Transform _barrierLinePosition;
         [SerializeField] private BarrierLine _barrierLinePrefab;
-
-        [SerializeField] private BarrierLine _barrierLine;
-
         public GameObject GameObject => gameObject;
-
-
-
+        public Transform CarSpawn => _carSpawn;
         public event Action<IPoolable> Destroyed;
         public event Action TriggeredEnter;
         public event Action<RoadSection> TriggeredExit;
+
+        private BarrierLine _barrierLine;
 
         public void SpawnBarrierLine()
         {
             _barrierLine = ObjectPool.Instance.GetObject(_barrierLinePrefab);
             _barrierLine.SpawnRandomBareier();
             _barrierLine.transform.SetParent(transform);
-            _barrierLine.transform.position = _barrierLintPosition.transform.position;
-
+            _barrierLine.transform.position = _barrierLinePosition.transform.position;
         }
 
         public void Reset()
